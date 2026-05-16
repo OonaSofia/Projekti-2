@@ -1,11 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>Music Information App</h1>
+      <p>Select an artist or search for your own artist.</p>
+    </header>
+
+    <main>
+      <section class="controls">
+        <h2>Select artist</h2>
+
+        <div id="artistButtons"></div>
+
+        <div class="search-box">
+          <input
+            id="artistSearch"
+            type="text"
+            placeholder="Search artist, for example Adele"
+          />
+          <button id="searchButton">Search</button>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="artistTitle">Albums</h2>
+        <div id="albums" class="album-grid"></div>
+      </section>
+
+      <section id="albumDetails" class="details hidden"></section>
+    </main>
+     <script src="script.js"></script>
+  </body>
 </html>
