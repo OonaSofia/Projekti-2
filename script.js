@@ -10,3 +10,23 @@ fetch(url)
     showAlbums(data);
   })
   .catch(error => console.error("Virhe:", error));
+
+
+function showAlbums(data) {
+  const albums = data.topalbums.album;
+  let output = "";
+
+  albums.forEach(album => {
+    const image = album.image[2]["#text"];
+
+    output += `
+      <div class="album-card">
+        <img src="${image}" alt="${album.name}">
+        <h3>${album.name}</h3>
+        <p>Artist: ${album.artist.name}</p>
+        <p>Listeners: ${album.listeners}</p>
+      </div>
+    `;
+  });
+  albumsDiv.innerHTML = output;
+}
