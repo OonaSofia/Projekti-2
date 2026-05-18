@@ -13,7 +13,7 @@ fetch(url)
 
 
 function showAlbums(data) {
-  const albums = data.topalbums.album;
+  let albums = data.topalbums.album;
   let output = "";
 
   albums.forEach(album => {
