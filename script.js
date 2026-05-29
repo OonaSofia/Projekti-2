@@ -29,7 +29,7 @@ searchButton.addEventListener("click", function () {
 });
 
 function getAlbums(artist) {
-  artistTitle.textContent = "Albums by " + artist;
+  artistTitle.textContent = "Albumit " + artist;
   albumsDiv.innerHTML = "<p>Pieni hetki...</p>";
  var url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=${API_KEY}&format=json&limit=8`;
 
@@ -58,7 +58,6 @@ function showAlbums(data) {
         <img src="${image}" alt="${album.name}">
         <h3>${album.name}</h3>
         <p>Artist: ${album.artist.name}</p>
-        <p>Listeners: ${album.listeners}</p>
       </div>
     `;
   });
