@@ -28,13 +28,23 @@ searchButton.addEventListener("click", function () {
   }
 });
 
-fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    showAlbums(data);
-  })
-  .catch((error) => console.error("Virhe:", error));
+function getAlbums(artist) {
+  artistTitle.textContent = "Albums by " + artist;
+  albumsDiv.innerHTML = "<p>Pieni hetki...</p>";
+ var url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=${API_KEY}&format=json&limit=8`;
+
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      showAlbums(data);
+    })
+    .catch(function (error) {
+      console.error("Virhe:", error);
+    });
+}
 
 function showAlbums(data) {
   let albums = data.topalbums.album;
