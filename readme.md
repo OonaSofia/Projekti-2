@@ -2,8 +2,7 @@
 AJAX-sovellus REST APIa hyödyntäen
 
 ## Verkkolinkit:
-Pääset julkaistuun sovellukseen käsiksi osoitteessa [google.com](https://google.com)
-Linkki projektin videoesittelyyn [google.com](https://google.com)
+Pääset julkaistuun sovellukseen käsiksi osoitteessa https://musicinformationsite.netlify.app/
 
 ## Työn jakautuminen 
 Miten työmäärä jaettiin? Kuka teki mitä? Miten yhteistyö sujui?
