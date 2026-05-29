@@ -41,7 +41,7 @@ function showAlbums(data) {
   let output = "";
 
   albums.forEach((album) => {
-    const image = album.image[2]["#text"];
+    var image = album.image[2]["#text"];
 
     output += `
       <div class="album-card">
@@ -54,3 +54,4 @@ function showAlbums(data) {
   });
   albumsDiv.innerHTML = output;
 }
+getAlbums("Rihanna");
