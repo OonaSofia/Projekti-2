@@ -38,3 +38,23 @@ button {
 button:hover {
   background-color: #2f7d4a;
 }
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.album-card {
+  background-color: white;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.album-card img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+}

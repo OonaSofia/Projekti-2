@@ -7,7 +7,7 @@ const artistTitle = document.querySelector("#artistTitle");
 var searchInput = document.querySelector("#artistSearch");
 var searchButton = document.querySelector("#searchButton");
 
-var artists = ["Cher", "Adele", "Coldplay", "Rihanna", "Madonna"];
+var artists = ["Nightwish", "Apulanta", "HIM", "Lordi", "PMMP", "Darude"];
 
 artists.forEach(function (artist) {
   var button = document.createElement("button");
@@ -64,4 +64,4 @@ function showAlbums(data) {
   });
   albumsDiv.innerHTML = output;
 }
-getAlbums("Rihanna");
+getAlbums("PMMP");
