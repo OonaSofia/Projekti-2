@@ -9,31 +9,38 @@ var searchButton = document.querySelector("#searchButton");
 
 var artists = ["Cher", "Adele", "Coldplay", "Rihanna", "Madonna"];
 
-artists.forEach(function(artist) {
+artists.forEach(function (artist) {
   var button = document.createElement("button");
   button.textContent = artist;
 
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     getAlbums(artist);
   });
 
   artistList.appendChild(button);
 });
 
+searchButton.addEventListener("click", function () {
+  var artist = searchInput.value;
+
+  if (artist != "") {
+    getAlbums(artist);
+  }
+});
+
 fetch(url)
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     console.log(data);
     showAlbums(data);
   })
-  .catch(error => console.error("Virhe:", error));
-
+  .catch((error) => console.error("Virhe:", error));
 
 function showAlbums(data) {
   let albums = data.topalbums.album;
   let output = "";
 
-  albums.forEach(album => {
+  albums.forEach((album) => {
     const image = album.image[2]["#text"];
 
     output += `
