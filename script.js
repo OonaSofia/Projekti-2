@@ -1,6 +1,7 @@
-//
+//API avain last.fm palveluun
 var API_KEY = "94c3dbc622abfee90c62edf339a49fc4";
 
+//Haettu html elementit 
 var albumsDiv = document.querySelector("#albums");
 var artistList = document.querySelector("#artistList");
 const artistTitle = document.querySelector("#artistTitle");
@@ -8,8 +9,10 @@ const artistTitle = document.querySelector("#artistTitle");
 var searchInput = document.querySelector("#artistSearch");
 var searchButton = document.querySelector("#searchButton");
 
+//Artisti lista
 var artists = ["Nightwish", "Apulanta", "HIM", "Lordi", "PMMP", "Darude"];
 
+//Jokaiselle artistille oma painike 
 artists.forEach(function (artist) {
   var button = document.createElement("button");
   button.textContent = artist;
@@ -20,7 +23,7 @@ artists.forEach(function (artist) {
 
   artistList.appendChild(button);
 });
-
+//Voi myös hakea muutakin artistia, kuin listalla olevat 
 searchButton.addEventListener("click", function () {
   var artist = searchInput.value;
 
@@ -29,6 +32,7 @@ searchButton.addEventListener("click", function () {
   }
 });
 
+//Haetaan oikeat albumit 
 function getAlbums(artist) {
   artistTitle.textContent = "Albumit " + artist;
   albumsDiv.innerHTML = "<p>Pieni hetki...</p>";
@@ -46,11 +50,12 @@ function getAlbums(artist) {
       console.error("Virhe:", error);
     });
 }
-
+//Näyttää oikeat albumit
 function showAlbums(data) {
   let albums = data.topalbums.album;
   let output = "";
 
+  //Käydä albumit läpi ja sitten jokaisesta oma kortti
   albums.forEach(function (album, index) {
     var image = album.image[2]["#text"];
 
