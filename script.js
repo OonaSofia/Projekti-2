@@ -59,11 +59,8 @@ function showAlbums(data) {
     <img src="${image}" alt="${album.name}">
     <h3>${album.name}</h3>
     <p>Artisti: ${album.artist.name}</p>
-    <p>Kuuntelijat: ${album.playcount}</p>
 
-    <div id="tracks-${index}" class="track-list">
-      <p>Haetaan biisejä...</p>
-    </div>
+    <div id="tracks-${index}" class="track-list"></div>
   </div>
 `; });
 
@@ -72,5 +69,27 @@ function showAlbums(data) {
   albums.forEach(function (album, index) {
   getAlbumTracks(album.artist.name, album.name, "tracks-" + index);
 });
+}
+function getAlbumTracks(artist, album, divId) {
+  var tracksDiv = document.querySelector("#" + divId);
+
+  var url = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}&api_key=${API_KEY}&format=json`;
+
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data.album && data.album.tracks && data.album.tracks.track) {
+        var output = "<h4>Biisit:</h4><ul>";
+
+        data.album.tracks.track.forEach(function (track) {
+          output += "<li>" + track.name + "</li>";
+        });
+
+        output += "</ul>";
+        tracksDiv.innerHTML = output;
+      }
+    });
 }
 getAlbums("PMMP");
