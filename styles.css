@@ -58,3 +58,22 @@ button:hover {
   height: 170px;
   object-fit: cover;
 }
+.track-list {
+  margin-top: 15px;
+}
+
+.track-list h4 {
+  margin-bottom: 8px;
+  color: #064d1f;
+}
+
+.track-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.track-list li {
+  margin: 4px 0;
+  font-size: 15px;
+}
