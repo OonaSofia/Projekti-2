@@ -9,6 +9,8 @@ var searchButton = document.querySelector("#searchButton");
 
 var artists = ["Nightwish", "Apulanta", "HIM", "Lordi", "PMMP", "Darude"];
 
+var albumDetails = document.querySelector("#albumDetails");
+
 artists.forEach(function (artist) {
   var button = document.createElement("button");
   button.textContent = artist;
