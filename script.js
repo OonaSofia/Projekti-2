@@ -69,8 +69,10 @@ function showAlbums(data) {
   </div>
 `; });
 
+//Lisätään albumi kortit sivulle
   albumsDiv.innerHTML = output;
 
+//Haetaan biisit jokaiselle albumille
   albums.forEach(function (album, index) {
   getAlbumTracks(album.artist.name, album.name, "tracks-" + index);
 });
@@ -84,6 +86,8 @@ function getAlbumTracks(artist, album, divId) {
     .then(function (response) {
       return response.json();
     })
+
+  //Jos apista löytyy albumin biisejä, näytetään ne listana. 
     .then(function (data) {
       if (data.album && data.album.tracks && data.album.tracks.track) {
         var output = "<h4>Biisit:</h4><ul>";
