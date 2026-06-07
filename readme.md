@@ -4,21 +4,16 @@ AJAX-sovellus REST APIa hyödyntäen
 ## Verkkolinkit:
 Pääset julkaistuun sovellukseen käsiksi osoitteessa https://musicinformationsite.netlify.app/
 
-## Työn jakautuminen 
-Miten työmäärä jaettiin? Kuka teki mitä? Miten yhteistyö sujui?
 
 ## Oma arvio työstä ja oman osaamisen kehittymisestä
-Mielestäni onnistuin...
-Parantamista olisi...
-Sovelluksesta jäi puuttumaan...
-Koen, että olen oppinut...
-Epäselväksi jäi...
-Antaisin itselleni pisteitä seuraavasti: xx/yy p
+Mielestäni onnistuin siinä, että sain sovelluksen hakemaan tietoa ulkoisesta API ja näyttämään sen sivulla selkeässä muodossa. Sovelluksessa käyttäjä voi valita artistin valmiista listasta tai hakea artistia itse hakukentän avulla. Albumien kuvat, nimet ja biisit näkyvät sivulla.
+
+Parantamista olisi vielä koodin selkeydessä ja virhetilanteiden käsittelyssä. Sovelluksesta jäi puuttumaan esimerkiksi tarkempi ilmoitus käyttäjälle, jos artistia ei löydy tai API ei palauta kaikkia tietoja. Parantamista olisi myös aikataulussa, sillä palautin tämän myöhässä. 
+
+Koen, että olen oppinut paremmin, miten AJAX/fetch toimii, miten JSON-dataa käsitellään ja miten API haettu tieto voidaan lisätä HTML-sivulle JavaScriptillä. 
 
 ## Palaute opettajalle kurssista sekä itse opetuksesta tähän saakka
-Kurssi sekä lähiopetus ovat tuntuneet... 
-Oppimistani tukisi jos...
-
+Kaikki verkkotunnit ovat auttaneet paljon ja on myös mukava kun ne tallennetaan niin voi käydä katsomassa tunteja myös myöhemmin. Discrod ei ole ollut kauhean aktiivinen. 
 
 ## Sisällysluettelo:
 
@@ -26,40 +21,35 @@ Oppimistani tukisi jos...
 - [Tunnetut virheet/bugit](#Tunnetut virheet/bugit)
 - [Kuvakaappaukset](#kuvakaappaukset)
 - [Teknologiat](#teknologiat)
-- [Asennus](#asennus)
-- [Lähestymistapa](#lähestymistapa)
 - [Kiitokset](#kiitokset)
 - [Lisenssi](#lisenssi)
 
 ## Tietoja sovelluksesta
-[Projektin nimi] on sovellus, joka ...
+Music Information Site (Levylöytö) on AJAX-sovellus, joka hyödyntää Last.fm REST APIa. Sovelluksessa käyttäjä voi valita artistin valmiista listasta tai hakea artistia hakukentän avulla.
 
 ## Tunnetut virheet/bugit
-Kerro jos tiedät sovelluksessa olevan jotain, mikä ei toimi tai toimii heikosti
+Kaikille albumeille ei välttämättä löydy biisilistaa Last.fm API.
 
 ## Kuvakaappaukset
-Lisää tähän vähintään yksi kuvakaappaus toimivasta sovelluksesta  
-`![Kirjoittaminen](https://unsplash.com/photos/VBPzRgd7gfc)`
 
-Kuva: [Kelly Sikkema](https://unsplash.com/@kellysikkema)
+![Kuvakaappaus sovelluksesta](imagines/screenshot.jpeg)
 
 ## Teknologiat
-Kuvaa, mitä teknologioita käytettiin ja mikä oli niiden rooli projektissasi.  
-Käytin seuraavia teknologioita: `html`, `css`, ...
+Käytin seuraavia teknologioita: 
 
-## Asennus
-Kirjoita lyhyet ohjeet sovelluksen käynnistämiseen ja käyttöön. Esimerkiksi:  
-- lataa kaikki tiedostot ja avaa index.html selaimessasi  
-- lataa tai kloonaa repositorio  
-- suorita `npm install`  
-- ...
+HTML: sivun rakenne
+CSS: ulkoasu ja asettelu
+JavaScript: toiminnallisuus ja API-haku
+Fetch API: datan hakeminen Last.fm API
+JSON: API palauttaman datan käsittely
+Last.fm API: musiikkidatan hakeminen
+Netlify: sovelluksen julkaisu verkkoon
 
 ## Kiitokset
-Lista lähteistä ja esimerkeistä, joita käytit projektin aikana. Mainitse myös, jos käytit ChatGPT:tä tai muita tekoälytyökaluja koodauksen aikana ja kerro, miten ne auttoivat sinua.  
-- [John Doe](johndoe.com)  
-- [Beginners guide to BEM](link-goes-here.com)  
+Kurssimateriaali: AJAX ja REST API -sisällöt (https://mika-stenberg.gitbook.io/web-sovelluksia-javascriptin-avulla/4.-dom-skriptaus/dom-skriptauksen-perusteita)
+Last.fm API
+ChatGPT: käytin apuna koodin tarkistamiseen, virheiden etsimiseen
 
 ## Lisenssi
-Valitse projektille lisenssi seuraamalla tätä [opasta](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
-
-Esimerkki: MIT-lisenssi @ [tekijä](author.com)
+ MIT License
+Copyright (c) 2026 Oona Sofia 
